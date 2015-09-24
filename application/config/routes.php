@@ -41,6 +41,24 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
+// routes to the zzz function in first.php
+$route['sleep'] = 'first/zzz';
+
+// routes to shucks function in welcome.php
+$route['lock/(.*)'] = 'welcome/shucks';
+
+// routes to gimme function in first.php
+$route['show/(:num)'] = 'first/gimme/3';
+
+// routes to guess.php
+$route['dunno'] = 'guess';
+
+// routes to bingo.php when any 4 digits are added infront of bingo
+$route['([a-zA-Z]{4})/bingo'] = 'bingo';
+
+// routes to wisdom funtion in bingo.php when comp+any 4 digits is used
+$route['(comp\d{4})/(.*)'] = 'bingo/wisdom';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

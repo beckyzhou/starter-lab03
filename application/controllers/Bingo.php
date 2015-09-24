@@ -8,7 +8,7 @@
  *
  * ------------------------------------------------------------------------
  */
-class Welcome extends Application {
+class Bingo extends Application {
 
     function __construct() {
         parent::__construct();
@@ -19,29 +19,29 @@ class Welcome extends Application {
     //-------------------------------------------------------------
 
     function index() {
-        $this->data['pagebody'] = 'homepage';    // this is the view we want shown
+        $this->data['pagebody'] = 'justone';    // this is the view we want shown
         // build the list of authors, to pass on to our view
-        $source = $this->quotes->all();
-        $authors = array();
-        foreach ($source as $record) {
-            $authors[] = array('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
-        }
-        $this->data['authors'] = $authors;
+        $source = $this->quotes->get('5');
+        
+        // accesses data array and loads the data stored in the array
+        $this->data['mug'] = $source['mug'];
+        $this->data['who'] = $source['who'];
+        $this->data['what'] = $source['what'];  
 
         $this->render();
     }
     
-    function shucks()
+    function wisdom()
     {
         $this->data['pagebody'] = 'justone';    // this is the view we want shown
         // build the list of authors, to pass on to our view
-        $source = $this->quotes->get('2');
-
+        $source = $this->quotes->get('6');
+        
         // accesses data array and loads the data stored in the array
         $this->data['mug'] = $source['mug'];
         $this->data['who'] = $source['who'];
-        $this->data['what'] = $source['what'];
-        
+        $this->data['what'] = $source['what'];  
+
         $this->render();
     }
 

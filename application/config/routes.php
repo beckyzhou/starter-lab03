@@ -50,6 +50,9 @@ $route['lock/(.*)'] = 'welcome/shucks';
 // added route to gimme function in first.php
 $route['show/(:num)'] = 'first/gimme/3';
 
+// added route to guess.php
+$route['dunno'] = 'guess';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

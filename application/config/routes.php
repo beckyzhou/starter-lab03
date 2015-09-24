@@ -41,10 +41,10 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
-// adds a route to the first function when "sleep" in the url
+// added route to the zzz function.php
 $route['sleep'] = 'first/zzz';
 
-// adds a route
+// added route to shucks function in welcome.php
 $route['lock/(.*)'] = 'welcome/shucks';
 
 

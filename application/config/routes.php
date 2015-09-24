@@ -41,11 +41,14 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
-// added route to the zzz function.php
+// added route to the zzz function in first.php
 $route['sleep'] = 'first/zzz';
 
 // added route to shucks function in welcome.php
 $route['lock/(.*)'] = 'welcome/shucks';
+
+// added route to gimme function in first.php
+$route['show/(:num)'] = 'first/gimme/3';
 
 
 /* End of file routes.php */

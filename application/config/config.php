@@ -7,7 +7,7 @@ if (!defined('BASEPATH'))
 $config['menu_choices'] = array(
     'menudata' => array(
         array('name' => 'First', 'link' => '/first'),
-        array('name' => 'Last', 'link' => '/last'),
+        array('name' => 'Last', 'link' => '/last/last'),
         )
     );
 

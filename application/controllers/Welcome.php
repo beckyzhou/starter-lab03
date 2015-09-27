@@ -18,11 +18,15 @@ class Welcome extends Application {
     //  The normal pages
     //-------------------------------------------------------------
 
-    function index() {
-        $this->data['pagebody'] = 'homepage';    // this is the view we want shown
+    function index()
+    {
+        // this is the view we want shown
+        $this->data['pagebody'] = 'homepage';
+        
         // build the list of authors, to pass on to our view
         $source = $this->quotes->all();
         $authors = array();
+        
         foreach ($source as $record) {
             $authors[] = array('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
         }
@@ -33,7 +37,8 @@ class Welcome extends Application {
     
     function shucks()
     {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        // this is the view we want shown
+        $this->data['pagebody'] = 'justone';
         // build the list of authors, to pass on to our view
         $source = $this->quotes->get('2');
 

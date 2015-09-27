@@ -1,43 +1,37 @@
 <?php
 
 /**
- * Our homepage. Show a table of all the author pictures. Clicking on one should show their quote.
- * Our quotes model has been autoloaded, because we use it everywhere.
+ * Guess page. Page set up using 'justone' view.
+ * Shows a picture of an anonymous person and thier quote.
  * 
- * controllers/Welcome.php
+ * controllers/Guess.php
  *
  * ------------------------------------------------------------------------
  */
-class Guess extends Application {
-
-    function __construct() {
+class Guess extends Application
+{
+    function __construct()
+    {
         parent::__construct();
     }
 
-    //-------------------------------------------------------------
-    //  The normal pages
-    //-------------------------------------------------------------
-
-    function index() {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+    function index()
+    {
+        // this is the view we want shown
+        $this->data['pagebody'] = 'justone';
+        
         // build the list of authors, to pass on to our view
         $source = $this->quotes->get('4');
         
         // accesses data array and loads the data stored in the array
         $this->data['mug'] = $source['mug'];
         $this->data['who'] = $source['who'];
-        $this->data['what'] = $source['what'];  
-        
-        //$authors = array();
-        //foreach ($source as $record) {
-            //$authors[] = array('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
-        //}
-        //$this->data['authors'] = $authors;
+        $this->data['what'] = $source['what'];
 
         $this->render();
     }
 
 }
 
-/* End of file Welcome.php */
-/* Location: application/controllers/Welcome.php */
+/* End of file Guess.php */
+/* Location: application/controllers/Guess.php */

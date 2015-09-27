@@ -1,25 +1,25 @@
 <?php
 
 /**
- * Our homepage. Show a table of all the author pictures. Clicking on one should show their quote.
- * Our quotes model has been autoloaded, because we use it everywhere.
+ * Bingo page. Page set up using 'justone' view.
  * 
- * controllers/Welcome.php
+ * controllers/Bingo.php
  *
  * ------------------------------------------------------------------------
  */
-class Bingo extends Application {
+class Bingo extends Application
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
 
-    //-------------------------------------------------------------
-    //  The normal pages
-    //-------------------------------------------------------------
-
-    function index() {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+    function index()
+    {
+        // this is the view we want shown
+        $this->data['pagebody'] = 'justone';
+        
         // build the list of authors, to pass on to our view
         $source = $this->quotes->get('5');
         
@@ -33,7 +33,9 @@ class Bingo extends Application {
     
     function wisdom()
     {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        // this is the view we want shown
+        $this->data['pagebody'] = 'justone';
+        
         // build the list of authors, to pass on to our view
         $source = $this->quotes->get('6');
         
@@ -47,5 +49,5 @@ class Bingo extends Application {
 
 }
 
-/* End of file Welcome.php */
-/* Location: application/controllers/Welcome.php */
+/* End of file Bingo.php */
+/* Location: application/controllers/Bingo.php */

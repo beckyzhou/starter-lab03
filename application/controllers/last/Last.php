@@ -1,25 +1,25 @@
 <?php
 
 /**
- * Our homepage. Show a table of all the author pictures. Clicking on one should show their quote.
- * Our quotes model has been autoloaded, because we use it everywhere.
+ * Page of our last person. Shows a picture of Isaac Asimov and a quote of his.
  * 
- * controllers/Welcome.php
+ * controllers/Last.php
  *
  * ------------------------------------------------------------------------
  */
-class Last extends Application {
+class Last extends Application
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
 
-    //-------------------------------------------------------------
-    //  The normal pages
-    //-------------------------------------------------------------
-
-    function index() {
-        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+    function index()
+    {    
+        // this is the view we want shown
+        $this->data['pagebody'] = 'justone';
+        //
         // build the list of authors, to pass on to our view
         $source = $this->quotes->last();
         
@@ -27,16 +27,10 @@ class Last extends Application {
         $this->data['who'] = $source['who'];
         $this->data['what'] = $source['what'];
         
-        //$authors = array();
-        //foreach ($source as $record) {
-        //    $authors[] = array('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
-        //}
-        //$this->data['authors'] = $authors;
-
         $this->render();
     }
 
 }
 
-/* End of file Welcome.php */
-/* Location: application/controllers/Welcome.php */
+/* End of file Last.php */
+/* Location: application/controllers/Last.php */

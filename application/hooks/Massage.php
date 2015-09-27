@@ -5,9 +5,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Massage extends Application {
+class Massage extends Application
+{
     
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
     
@@ -34,7 +36,7 @@ class Massage extends Application {
         $replace = array( '<strong>$1</strong>');
         
         // loops through each 'p' tag on the page
-        foreach($pList as $p)
+        foreach( $pList as $p )
         {
             if( $p->getAttribute( 'class' == 'lead' ) )
             {
@@ -55,7 +57,6 @@ class Massage extends Application {
 
         //output the changes back to the screen
         echo $dom->saveHTML();
-        
     }
     
 }

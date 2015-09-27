@@ -10,7 +10,13 @@
 |
 */
 
-
+    $hook['display_override'] = array
+    (
+        'class' => 'Massage',
+        'function' => 'boldCapitals',
+        'filename' => 'Massage.php',
+        'filepath' => 'hooks'
+    );
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
